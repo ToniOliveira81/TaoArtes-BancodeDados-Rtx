@@ -1,0 +1,58 @@
+BEGIN TRANSACTION
+
+CREATE TABLE Marcas
+(
+	Codigo INT IDENTITY(1,1) NOT NULL,
+	Nome VARCHAR(20),
+	Empresa VARCHAR(30),
+	CONSTRAINT PK_CodigoMarca PRIMARY KEY (Codigo)
+)
+
+CREATE TABLE Produtos
+(
+	Codigo INT IDENTITY(1,1) NOT NULL,
+	Sku CHAR(4),
+	Descricao VARCHAR(80),
+	Codigo_Marca INT NOT NULL,
+	CONSTRAINT PK_CodigoProduto PRIMARY KEY (Codigo),
+	CONSTRAINT FK_CodigoMarca FOREIGN KEY (Codigo_Marcas) REFERENCES Marca(codigo)
+)
+
+CREATE TABLE Distribuidor 
+(
+	Codigo INT IDENTITY(1,1) NOT NULL,
+	Nome_Fantasia VARCHAR(40) NOT NULL,
+	Razao_Social VARCHAR(40) NOT NULL,
+	CNPJ VARCHAR(14) NOT NULL,
+	Endereco VARCHAR(40),
+	CEP NCHAR(8),
+	Cidade VARCHAR(35),
+	Estado CHAR(2),
+	CONSTRAINT PK_CodigoDistribuidor PRIMARY KEY (Codigo)
+)
+
+CREATE TABLE Pedido_Compra
+(
+	Codigo INT IDENTITY(1,1) NOT NULL,
+	Valor DECIMAL(6,2),
+	Data DATETIME NOT NULL,
+	Entregue BIT,
+	Codigo_Distribuidor INT NOT NULL,
+	CONSTRAINT PK_CodigoPedido_Compra PRIMARY KEY (Codigo),
+	CONSTRAINT FK_CodigoDistribuidor FOREIGN KEY (Codigo_Distribuidor) REFERENCES Distribuidor(Codigo)
+)
+
+CREATE TABLE Item_Pedido_Compra
+(
+	Codigo INT IDENTITY(1,1) NOT NULL,
+	Valor_Unitario DECIMAL(6,2),
+	Quantidade int,
+	Valor_Total DECIMAL(6,2),
+	Codigo_Produto INT NOT NULL,
+	Codigo_Pedido_Compra INT NOT NULL,
+	CONSTRAINT FK_CodigoProdutoCompra FOREIGN KEY (Codigo_Produto) REFERENCES Produto(Codigo),
+	CONSTRAINT FK_CodigoPedidoCompraItem FOREIGN KEY (Codigo_Pedido_Compra) REFERENCES Pedido_Compra(Codigo),
+)
+
+--COMMIT
+--ROLLBACK

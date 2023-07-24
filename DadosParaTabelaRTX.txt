@@ -1,0 +1,41 @@
+MARCAS
+
+INSERT INTO MARCA VALUES ('Honda','Honda Peças Originais')
+INSERT INTO MARCA VALUES ('Yamaha','Yamaha Peças Originais')
+INSERT INTO MARCA VALUES ('Sportive','Sportive Peças Similares')
+INSERT INTO MARCA VALUES ('Plasmoto','Plasmoto Peças Similares')
+
+-----------------------------------------------------------------------------------------
+PEÇAS (PRODUTOS)
+
+INSERT INTO PRODUTOS VALUES ('FC01','Kit Farol Carenagem Completa Factor 125/150 Preta','4')
+INSERT INTO PRODUTOS VALUES ('NE10','Manicoto Direito Neo 125','2')
+INSERT INTO PRODUTOS VALUES ('FN22','Aba CG Fan Cargo 160','3')
+INSERT INTO PRODUTOS VALUES ('BB33','Aranha CG Fan 160 2022','1')
+
+----------------------------------------------------------------------------------------
+DISTRIBUIDOR
+
+INSERT INTO DISTRIBUIDOR VALUES ('Plasmoto','Plasmoto Ind. Com. LTDA  1','64649445000180','Avenida Marginal, 3350','11345000','São Vicente','SP')
+INSERT INTO DISTRIBUIDOR VALUES ('Sportive','Sportive Ind. Com. Eireli  2','02444314000109','Estrada Geraldo Costa Camargo, 472','13187115','Hortolandia','SP')
+INSERT INTO DISTRIBUIDOR VALUES ('Leste RR','Leste RR Moto Sport LTDA  3','11006804000114','Rua do Oratorio, 1452','03116000','São Paulo','SP')
+INSERT INTO DISTRIBUIDOR VALUES ('Siri Motos','Crab Comercio Imp. LTDA  4','01101058000356','Alameda Barao de Limeira, 260','01202000','São Paulo','SP')
+INSERT INTO DISTRIBUIDOR VALUES ('Diamar','Diamar Motos LTDA  5','04190389000217','Avenida General Edgar Faco, 1137','02924401','São Paulo','SP')
+
+
+------------------------------------------------------------------------------------------
+PEDIDO COMPRA
+
+INSERT INTO Pedido_Compra VALUES (2023-07-24,1719.20,1,4)
+INSERT INTO Pedido_Compra VALUES (2023-07-24,62.50,1,2)
+INSERT INTO Pedido_Compra VALUES (2023-07-24,2189.40,1,3)
+INSERT INTO Pedido_Compra VALUES (2023-07-24,55,1,1)
+
+--------------------------------------------------------------------------------------
+ITEM PEDIDO COMPRA
+
+INSERT INTO Item_Pedido_Compra VALUES (1000,1,1000,7,1)
+INSERT INTO Item_Pedido_Compra VALUES (50,5,10,2,2)
+INSERT INTO Item_Pedido_Compra VALUES (50,5,10,4,2)
+INSERT INTO Item_Pedido_Compra VALUES (1000,1,1000,7,3)
+
